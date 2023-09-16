@@ -3,6 +3,11 @@
 
 Este proyecto utiliza Flask y MongoDB para mostrar una lista de películas.
 
+## Muestra
+
+![alt text](Animation.gif)
+
+
 ## Instalación
 
 1. **Clona el Repositorio**  
