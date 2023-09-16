@@ -33,6 +33,7 @@ mongo = PyMongo(app)
 #Dejando esto fuera ya que de momento usaremos solo los datasets de muestra de Mongo
 #manage_database(mongo)
 
+#Estas colecciones salieron de "Load Sample Dataset" cuando se crea un cluster en Mongo
 #Llamamos la colección de nuestro interes, esto es lo que vamos a pasar para renderizar nuestros templates
 collection_names = mongo.db.list_collections_names
 movie_collection = mongo.db.movies
