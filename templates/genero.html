@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+    {% for genre, peliculas in genre_movies.items() %}
+    <header>
+        <h2 class="text-center">{{ genre }}</h2>
+    </header>
+    <div class="row">
+        {% for pelicula in peliculas %}
+        <div class="col-md-2">
+            <div class="card h-100 mb-4">
+                <img src={{pelicula.poster}} class="card-img-top" alt="...">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">{{ pelicula.title }}</h5>
+                    <p class="card-text flex-grow-1">{{ pelicula.plot }}</p>
+                    <div class="d-grid gap-1 mt-auto">
+                      <button class="btn btn-primary" type="button" @click='searchGoogle("{{ pelicula.title|replace("'", "&apos;") }}")'>Ver</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% if loop.index % 5 == 0 and not loop.last %}
+    </div>
+    <div class="row">
+        {% endif %}
+        {% endfor %}
+    </div>
+    <hr> <!-- Add a horizontal line to separate different genres -->
+    {% endfor %}
+</div>
+{% endblock %}
